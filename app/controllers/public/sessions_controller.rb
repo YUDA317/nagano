@@ -27,6 +27,6 @@ class Public::SessionsController < Devise::SessionsController
   before_action :authenticate_customer!
   
   def after_sign_in_path_for(resource)
-    public_customers_path
+    root_path
   end
 end
