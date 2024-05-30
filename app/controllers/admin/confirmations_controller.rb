@@ -27,4 +27,5 @@ class Admin::ConfirmationsController < Devise::ConfirmationsController
   # def after_confirmation_path_for(resource_name, resource)
   #   super(resource_name, resource)
   # end
+  before_action :authenticate_admin!
 end
