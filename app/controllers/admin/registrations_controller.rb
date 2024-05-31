@@ -65,5 +65,5 @@ class Admin::RegistrationsController < Devise::RegistrationsController
   
   protected
   
-  
+
 end

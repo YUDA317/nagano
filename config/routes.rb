@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :customers, only: [:index, :show, :edit, :update]
-
   namespace :admin do
     root to: "order#index"
     resources :items, skip: [:destory]
@@ -17,10 +15,12 @@ Rails.application.routes.draw do
     resources :order, only: [:index]
     resources :order_details, only: [:show]
   end
+
   namespace :public do
     root to: "homes#top"
     get 'home/about' => "homes#about",as: 'about'
     resources :items, only: [:index, :show]
+    resources :customers, only: [:show, :edit, :update]
   end
 end
 

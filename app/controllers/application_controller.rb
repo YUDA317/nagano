@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
       order_path
     else
       public_items_path
+    end
   end
 end
