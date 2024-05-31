@@ -9,13 +9,18 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :customers, only: [:index, :show, :edit, :update]
-  
-  Rails.application.routes.draw do
-    namespace :public do
-      root to: "homes#top"
-      get 'home/about' => "homes#about",as: 'about'
-      resources :items, only: [:index, :show]
-    end
-  end
 
+  namespace :admin do
+    root to: "order#index"
+    resources :items, skip: [:destory]
+    resources :customers, only: [:index, :show, :edit, :update]
+    resources :order, only: [:index]
+    resources :order_details, only: [:show]
+  end
+  namespace :public do
+    root to: "homes#top"
+    get 'home/about' => "homes#about",as: 'about'
+    resources :items, only: [:index, :show]
+  end
 end
+
