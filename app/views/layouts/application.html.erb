@@ -46,7 +46,7 @@
                 
               <% elsif customer_signed_in? %>
                 <li>
-                  <%= link_to public_customers_path(current_customer) do %>
+                  <%= link_to public_customer_path(current_customer) do %>
                     マイページ
                   <% end %>
                 </li>
@@ -56,7 +56,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_customer_session_path, method: :delete %>
+                  <%= link_to destroy_customer_session_path, method: :delete do %>
                     ログアウト
                   <% end %>
                 </li>

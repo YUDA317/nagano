@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
     resources :customers, only: [:show, :edit, :update]
   end
+  root to: "public/homes#top"
 end
 

@@ -27,5 +27,5 @@ class Public::UnlocksController < Devise::UnlocksController
   # def after_unlock_path_for(resource)
   #   super(resource)
   # end
-  before_action :authenticate_customer!
+
 end

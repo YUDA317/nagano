@@ -60,10 +60,10 @@ class Admin::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   def after_sign_in_path_for(resource)
-    root_path
+    admin_order_path
   end
-  
+
   protected
-  
+
 
 end
