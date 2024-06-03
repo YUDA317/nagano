@@ -1,33 +1,35 @@
 <div class="container">
   <div class="row no-gutters">
-  <h4>商品新規登録</h4>
+  <h4 class="ml-2 mr-10">商品新規登録</h4>
   <%= form_with url: admin_items_path,  model: @item do |f| %>
-  <div class="row">
-    <div class="col-1">商品画像</div>
-      <div class="col-11">
-        <%= f.file_field :image, accept: "image/*" %>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-1">商品名</div>
-      <div class="col-11">
-        <%= f.text_field :name %>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-1">商品説明</div>
-      <div class="col-11">
-        <%= f.text_area :introduction %>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-1">税抜き価格</div>
-      <div class="col-11">
-        <%= f.text_field :price %>円
-      </div>
-  </div>
-  <div class="col-6">
-    <%= f.submit '新規登録' %>
+  <div class="col-md-3 ml-1 mr-2 px-0 my-3">
+    <div>
+      <div>商品画像</div>
+        <div>
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+    </div>
+    <div>
+      <div>商品名</div>
+        <div>
+          <%= f.text_field :name %>
+        </div>
+    </div>
+    <div>
+      <div>商品説明</div>
+        <div>
+          <%= f.text_area :introduction %>
+        </div>
+    </div>
+    <div>
+      <div>税抜き価格</div>
+        <div>
+          <%= f.text_field :price %>円
+        </div>
+    </div>
+    <div>
+      <%= f.submit '新規登録' %>
+    </div>
   </div>
   <% end %>
   </div>

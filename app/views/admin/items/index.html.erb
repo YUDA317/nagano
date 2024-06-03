@@ -1,1 +1,29 @@
-<h1>index</h1>
+<h4>商品一覧</h4>
+<span>
+  <a href="/admin/items/new">
+  <i class="fa-solid fa-plus"></i>
+  </a>
+</span>
+<table>
+  <tr>
+    <th>商品ID</th>
+    <th>商品名</th>
+    <th>税抜き価格</th>
+  </tr>
+  <% @items.each do |item| %>
+    <tr>
+      <td>
+        <%= item.id %>
+      </td>
+      <td>
+        <%= link_to admin_item_path(item.id) do %>
+          <%= item.name %>
+        <% end %>
+      </td>
+      <td>
+        <%= item.price %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @items %>
