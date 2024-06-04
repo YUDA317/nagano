@@ -5,6 +5,7 @@ class Item < ApplicationRecord
     if image.attached?
       image
     else
+      'no_image.jpg'
     end
   end
 end

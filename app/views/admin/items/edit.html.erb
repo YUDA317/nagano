@@ -1,1 +1,22 @@
-<h1>edit</h1>
+<h4>商品編集</h4>
+<div>商品画像</div>
+<%= form_with url: admin_items_path,  model: @item do |f| %>
+<div>
+  <%= f.file_field :image, accept: "image/*" %>
+</div>
+<div>商品名</div>
+<div>
+  <%= f.text_field :name %>
+</div>
+<div>商品説明</div>
+<div>
+  <%= f.text_area :introduction %>
+</div>
+<div>税抜き価格</div>
+<div>
+  <%= f.text_field :price %>円
+</div>
+<div>
+  <%= f.submit '変更を保存' %>
+</div>
+<% end %>
