@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :admin do
     root to: "order#index"
-    resources :items, except: [:destory]
+    resources :items, only: [:new, :create, :index, :edit, :show, :update]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index]
     resources :order_details, only: [:show]
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :update]
     resources :orders, only: [:index]
     resources :order_details, only: [:show]
+    get 'shared/links', to: 'shared#links'
   end
   root to: "public/homes#top"
 end
