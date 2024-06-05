@@ -1,0 +1,21 @@
+<div>
+  <%= image_tag @item.get_image, size: "300x200" %>
+</div>
+<h4>
+  <strong>
+    <%= @item.name %>
+  </strong>
+</h4>
+<div>
+  <%= @item.introduction %>
+</div>
+<div>
+  <strong>￥<%=@item.price %></strong>(税込)
+</div>
+<select>
+  <option calue="value1">1</option>
+  <option calue="value2">2</option>
+  <option calue="value3">3</option>
+  <option calue="value4">4</option>
+  <option calue="value5">5</option>
+</select>

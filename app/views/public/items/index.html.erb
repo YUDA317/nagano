@@ -1,1 +1,15 @@
-<h1>item/index</h1>
+<h4>商品一覧</h4>
+<% @items.each do |item| %>
+  <div>
+    <%= link_to public_item_path(item.id) do %>
+      <%= image_tag item.get_image, size: "200x100" %>
+    <% end %>
+  </div>
+  <div>
+    <%= item.name %>
+  </div>
+  <div>
+    <%= item.price %>
+  </div>
+<% end %>
+<%= paginate @items, per_page: 8 %>
