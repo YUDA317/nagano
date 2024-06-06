@@ -12,10 +12,7 @@
 <div>
   <strong>￥<%=@item.price %></strong>(税込)
 </div>
-<select>
-  <option calue="value1">1</option>
-  <option calue="value2">2</option>
-  <option calue="value3">3</option>
-  <option calue="value4">4</option>
-  <option calue="value5">5</option>
-</select>
+<% form_with url: public_cart_items_path, model: @item do |f| %>
+<%= f.hidden_field :value => @item.id %>
+  <%= f.select :amount, [1, 2, 3, 4, 5] %>
+<% end %>
