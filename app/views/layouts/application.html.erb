@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <script src="https://kit.fontawesome.com/f4d3a5e756.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -44,7 +44,7 @@
                     ログアウト
                   <% end %>
                 </li>
-                
+
               <% elsif customer_signed_in? %>
                 <li>
                   <%= link_to public_customer_path(current_customer) do %>
@@ -57,11 +57,16 @@
                   <% end %>
                 </li>
                 <li>
+                  <%= link_to public_cart_items_path do %>
+                    カート
+                  <% end %>
+                </li>
+                <li>
                   <%= link_to destroy_customer_session_path, method: :delete do %>
                     ログアウト
                   <% end %>
                 </li>
-                
+
               <% else %>
                 <li>
                   <%= link_to public_about_path do %>
