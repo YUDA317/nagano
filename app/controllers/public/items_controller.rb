@@ -1,4 +1,10 @@
 class Public::ItemsController < ApplicationController
+  before_action :amount, only: [:new, :create]
+  
+  def amount
+    @amount = Amount.all
+  end
+  
   def index
     @items = Item.page(params[:page]).per(8)
   end

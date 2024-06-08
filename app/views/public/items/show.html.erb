@@ -12,7 +12,9 @@
 <div>
   <strong>￥<%=@item.price %></strong>(税込)
 </div>
-<% form_with url: public_cart_items_path, model: @item do |f| %>
-<%= f.hidden_field :value => @item.id %>
+<%= form_with url: public_cart_items_path, model: @item do |f| %>
+<div>
+  <%= f.hidden_field :item_id, :value => @item.id %>
   <%= f.select :amount, [1, 2, 3, 4, 5] %>
+</div>
 <% end %>
