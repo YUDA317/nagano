@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_one_attached :image
-  belongs_to :cart_ite
+  has_many :cart_item
 
   def get_image
     if image.attached?

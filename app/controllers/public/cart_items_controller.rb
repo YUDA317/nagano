@@ -12,7 +12,7 @@ class Public::CartItemsController < ApplicationController
     end
   end
 
-  def edit
+  def index
     @items = Item.page(params[:page])
     @cart_items = CartItem.page(params[:page])
   end
